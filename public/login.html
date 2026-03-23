@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Pagaska Music — Masuk</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#0b0b17;--s2:#16162e;--bd:rgba(255,255,255,.08);--bd2:rgba(255,255,255,.15);--tx:#e4e4f8;--mt:#5a5a98;--g:#1ed760;--gbg:rgba(30,215,96,.08);--rd:#ed4245;--p:#5865f2}
+html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;overflow:hidden}
+.bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.bg::before{content:'';position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(30,215,96,.06) 0%,transparent 65%);top:-350px;left:-200px;animation:a1 22s ease-in-out infinite}
+.bg::after{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(88,101,242,.05) 0%,transparent 65%);bottom:-280px;right:-180px;animation:a2 28s ease-in-out infinite}
+@keyframes a1{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,50px)}}
+@keyframes a2{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-55px)}}
+.wrap{position:relative;z-index:1;height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{width:100%;max-width:390px;background:rgba(15,15,34,.85);border:1px solid var(--bd2);border-radius:24px;padding:42px 34px 36px;backdrop-filter:blur(30px) saturate(1.5);box-shadow:0 40px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.06)}
+.brand{text-align:center;margin-bottom:34px}
+.b-ico{width:58px;height:58px;border-radius:17px;background:linear-gradient(140deg,#1ed760,#0f9e3e);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:1.55rem;color:#fff}
+.b-name{font-family:'Syne',sans-serif;font-size:1.55rem;font-weight:900;letter-spacing:-.5px;color:#fff}
+.b-sub{font-size:.73rem;color:var(--mt);margin-top:4px}
+.ttl{font-family:'Syne',sans-serif;font-size:1.08rem;font-weight:800;margin-bottom:3px}
+.sub{font-size:.75rem;color:var(--mt);margin-bottom:24px}
+.al{padding:11px 14px;border-radius:10px;font-size:.77rem;align-items:center;gap:9px;display:none;margin-bottom:16px;animation:fi .2s ease}
+.al.on{display:flex}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.al.err{background:rgba(237,66,69,.09);border:1px solid rgba(237,66,69,.22);color:#f47e80}
+.al.ok{background:rgba(30,215,96,.08);border:1px solid rgba(30,215,96,.22);color:var(--g)}
+.fld{margin-bottom:16px}
+.lbl{display:block;font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--mt);margin-bottom:6px}
+.iw{position:relative}
+.iw input{width:100%;background:rgba(255,255,255,.05);border:1.5px solid var(--bd);border-radius:12px;padding:13px 42px 13px 15px;color:var(--tx);font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:all .2s}
+.iw input:focus{border-color:var(--g);background:rgba(30,215,96,.04)}
+.iw input::placeholder{color:var(--mt)}
+.eye{position:absolute;right:13px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--mt);cursor:pointer;font-size:.82rem;padding:4px;transition:color .2s}
+.eye:hover{color:var(--tx)}
+.btn{width:100%;padding:14px;border-radius:12px;border:none;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:9px;margin-top:4px;letter-spacing:.1px}
+.btn-g{background:var(--g);color:#000}
+.btn-g:hover{background:#22ef6a;transform:translateY(-1px)}
+.btn-g:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.sep{display:flex;align-items:center;gap:10px;color:var(--mt);font-size:.7rem;margin:20px 0}
+.sep::before,.sep::after{content:'';flex:1;height:1px;background:var(--bd)}
+.lr{text-align:center;font-size:.8rem;color:var(--mt)}
+.lr a{color:var(--g);text-decoration:none;font-weight:700}
+.lr a:hover{text-decoration:underline}
+.sp{animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="wrap">
+  <div class="card">
+    <div class="brand">
+      <div class="b-ico"><i class="fa-brands fa-soundcloud"></i></div>
+      <div class="b-name">Pagaska Music</div>
+      <div class="b-sub">Platform musik anggota Pagaska</div>
+    </div>
+    <div class="ttl">Selamat datang kembali</div>
+    <div class="sub">Masuk ke akun kamu</div>
+    <div class="al err" id="al"></div>
+    <div class="fld">
+      <label class="lbl">Username</label>
+      <div class="iw"><input type="text" id="fU" placeholder="Masukkan username" autocomplete="username"></div>
+    </div>
+    <div class="fld">
+      <label class="lbl">Password</label>
+      <div class="iw">
+        <input type="password" id="fP" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')go()">
+        <button class="eye" id="ey" onclick="toggleEye()"><i class="fa-solid fa-eye"></i></button>
+      </div>
+    </div>
+    <button class="btn btn-g" id="btn" onclick="go()"><i class="fa-solid fa-right-to-bracket"></i>Masuk</button>
+    <div class="sep">atau</div>
+    <div class="lr">Belum punya akun? <a href="/register">Daftar sekarang</a></div>
+  </div>
+</div>
+<script src="/_lib/api.js"></script>
+<script>
+if(API.isLoggedIn()) location.href='/';
+let ey=false;
+function toggleEye(){ey=!ey;document.getElementById('fP').type=ey?'text':'password';document.getElementById('ey').innerHTML=ey?'<i class="fa-solid fa-eye-slash"></i>':'<i class="fa-solid fa-eye"></i>';}
+function alert2(m,t){const e=document.getElementById('al');e.className='al on '+(t==='ok'?'ok':'err');e.innerHTML=`<i class="fa-solid fa-${t==='ok'?'circle-check':'circle-exclamation'}"></i>${m}`;}
+async function go(){
+  const u=document.getElementById('fU').value.trim();
+  const p=document.getElementById('fP').value;
+  if(!u||!p){alert2('Isi semua field!');return;}
+  const btn=document.getElementById('btn');
+  btn.disabled=true;btn.innerHTML='<i class="fa-solid fa-circle-notch sp"></i>Masuk...';
+  try{await API.login(u,p);alert2('Berhasil!','ok');setTimeout(()=>location.href='/',700);}
+  catch(e){alert2(e.message);btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-right-to-bracket"></i>Masuk';}
+}
+</script>
+</body>
+</html>
