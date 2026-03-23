@@ -2,5 +2,5 @@
   "name": "pagaska-music",
   "version": "3.1.0",
   "private": true,
-  "engines": { "node": "18.x" }
+  "engines": { "node": "24.x" }
 }
