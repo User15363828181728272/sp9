@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Pagaska Music — Daftar</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#0b0b17;--bd:rgba(255,255,255,.08);--bd2:rgba(255,255,255,.15);--tx:#e4e4f8;--mt:#5a5a98;--g:#1ed760;--gbg:rgba(30,215,96,.08);--rd:#ed4245}
+html,body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;min-height:100%}
+.bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.bg::before{content:'';position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(30,215,96,.06) 0%,transparent 65%);top:-350px;left:-200px;animation:a1 22s ease-in-out infinite}
+.bg::after{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(88,101,242,.05) 0%,transparent 65%);bottom:-280px;right:-180px;animation:a2 28s ease-in-out infinite}
+@keyframes a1{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,50px)}}
+@keyframes a2{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-55px)}}
+.wrap{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px 16px}
+.card{width:100%;max-width:400px;background:rgba(15,15,34,.85);border:1px solid var(--bd2);border-radius:24px;padding:38px 30px 32px;backdrop-filter:blur(30px) saturate(1.5);box-shadow:0 40px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.06)}
+.brand{text-align:center;margin-bottom:28px}
+.b-ico{width:52px;height:52px;border-radius:15px;background:linear-gradient(140deg,#1ed760,#0f9e3e);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#fff}
+.b-name{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:900;letter-spacing:-.5px;color:#fff}
+.ttl{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;margin-bottom:3px}
+.sub{font-size:.74rem;color:var(--mt);margin-bottom:22px}
+.al{padding:11px 14px;border-radius:10px;font-size:.77rem;align-items:center;gap:9px;display:none;margin-bottom:14px}
+.al.on{display:flex}
+.al.err{background:rgba(237,66,69,.09);border:1px solid rgba(237,66,69,.22);color:#f47e80}
+.al.ok{background:rgba(30,215,96,.08);border:1px solid rgba(30,215,96,.22);color:var(--g)}
+.fld{margin-bottom:14px}
+.lbl{display:block;font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--mt);margin-bottom:5px}
+.iw{position:relative}
+.iw input{width:100%;background:rgba(255,255,255,.05);border:1.5px solid var(--bd);border-radius:11px;padding:12px 40px 12px 14px;color:var(--tx);font-family:'DM Sans',sans-serif;font-size:.875rem;outline:none;transition:all .2s}
+.iw input:focus{border-color:var(--g);background:rgba(30,215,96,.04)}
+.iw input::placeholder{color:var(--mt)}
+.eye{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--mt);cursor:pointer;font-size:.8rem;padding:4px;transition:color .2s}
+.eye:hover{color:var(--tx)}
+.str{height:3px;background:rgba(255,255,255,.07);border-radius:2px;margin-top:5px;overflow:hidden}
+.strf{height:100%;border-radius:2px;transition:all .3s;width:0}
+.strl{font-size:.62rem;margin-top:3px;min-height:14px;color:var(--mt)}
+.btn{width:100%;padding:13px;border-radius:12px;border:none;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:9px;margin-top:4px}
+.btn-g{background:var(--g);color:#000}
+.btn-g:hover{background:#22ef6a;transform:translateY(-1px)}
+.btn-g:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.sep{display:flex;align-items:center;gap:10px;color:var(--mt);font-size:.7rem;margin:18px 0}
+.sep::before,.sep::after{content:'';flex:1;height:1px;background:var(--bd)}
+.lr{text-align:center;font-size:.79rem;color:var(--mt)}
+.lr a{color:var(--g);text-decoration:none;font-weight:700}
+.lr a:hover{text-decoration:underline}
+.sp{animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="wrap">
+  <div class="card">
+    <div class="brand">
+      <div class="b-ico"><i class="fa-brands fa-soundcloud"></i></div>
+      <div class="b-name">Pagaska Music</div>
+    </div>
+    <div class="ttl">Buat akun baru</div>
+    <div class="sub">Daftar untuk mulai dengerin musik</div>
+    <div class="al err" id="al"></div>
+    <div class="fld"><label class="lbl">Nama Lengkap</label><div class="iw"><input type="text" id="fN" placeholder="Nama kamu"></div></div>
+    <div class="fld"><label class="lbl">Username</label><div class="iw"><input type="text" id="fU" placeholder="username unik, min 3 karakter" autocomplete="username"></div></div>
+    <div class="fld">
+      <label class="lbl">Password</label>
+      <div class="iw">
+        <input type="password" id="fP" placeholder="Min. 6 karakter" autocomplete="new-password" oninput="chkStr(this.value)">
+        <button class="eye" id="ey1" onclick="tEye('fP','ey1')"><i class="fa-solid fa-eye"></i></button>
+      </div>
+      <div class="str"><div class="strf" id="sf"></div></div>
+      <div class="strl" id="sl"></div>
+    </div>
+    <div class="fld">
+      <label class="lbl">Konfirmasi Password</label>
+      <div class="iw">
+        <input type="password" id="fP2" placeholder="Ulangi password" onkeydown="if(event.key==='Enter')go()">
+        <button class="eye" id="ey2" onclick="tEye('fP2','ey2')"><i class="fa-solid fa-eye"></i></button>
+      </div>
+    </div>
+    <button class="btn btn-g" id="btn" onclick="go()"><i class="fa-solid fa-user-plus"></i>Daftar Sekarang</button>
+    <div class="sep">sudah punya akun?</div>
+    <div class="lr"><a href="/login">Masuk di sini</a></div>
+  </div>
+</div>
+<script src="/_lib/api.js"></script>
+<script>
+if(API.isLoggedIn()) location.href='/';
+function tEye(fId,bId){const i=document.getElementById(fId),b=document.getElementById(bId),s=i.type==='password';i.type=s?'text':'password';b.innerHTML=s?'<i class="fa-solid fa-eye-slash"></i>':'<i class="fa-solid fa-eye"></i>';}
+function chkStr(v){const f=document.getElementById('sf'),l=document.getElementById('sl');if(!v){f.style.width='0';l.textContent='';return;}let s=0;if(v.length>=6)s++;if(v.length>=10)s++;if(/[A-Z]/.test(v))s++;if(/[0-9]/.test(v))s++;if(/[^A-Za-z0-9]/.test(v))s++;const m=[{w:'20%',c:'#ed4245',l:'Sangat lemah'},{w:'40%',c:'#fa8c16',l:'Lemah'},{w:'60%',c:'#fadb14',l:'Cukup'},{w:'80%',c:'#52c41a',l:'Kuat'},{w:'100%',c:'#1ed760',l:'Sangat kuat'}][Math.min(s,4)];f.style.width=m.w;f.style.background=m.c;l.textContent=m.l;l.style.color=m.c;}
+function alert2(m,t){const e=document.getElementById('al');e.className='al on '+(t==='ok'?'ok':'err');e.innerHTML=`<i class="fa-solid fa-${t==='ok'?'circle-check':'circle-exclamation'}"></i>${m}`;}
+async function go(){
+  const n=document.getElementById('fN').value.trim(),u=document.getElementById('fU').value.trim().toLowerCase(),p=document.getElementById('fP').value,p2=document.getElementById('fP2').value;
+  if(!n||!u||!p){alert2('Semua field wajib diisi!');return;}
+  if(p!==p2){alert2('Password tidak cocok!');return;}
+  if(p.length<6){alert2('Password minimal 6 karakter!');return;}
+  const btn=document.getElementById('btn');btn.disabled=true;btn.innerHTML='<i class="fa-solid fa-circle-notch sp"></i>Mendaftarkan...';
+  try{await API.register(n,u,p);alert2('Berhasil!','ok');setTimeout(()=>location.href='/',700);}
+  catch(e){alert2(e.message);btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-user-plus"></i>Daftar Sekarang';}
+}
+</script>
+</body>
+</html>
