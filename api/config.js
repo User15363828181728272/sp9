@@ -9,7 +9,7 @@ module.exports = {
     path:   '/home/container/data',
   },
   jwt: {
-    secret: 'scure-pgsk-lixhwywvdjj622-622026',
+    secret: 'pgsk_pagaska_music_secret_2024_x9z',
   },
   admin: {
     username: 'admin',
